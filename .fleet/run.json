@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "Run Backend",
+            "program": "$USER_HOME$/.local/share/virtualenvs/ira-backend-kPznmfYW/bin/fastapi",
+            "args": ["dev", "$PROJECT_DIR$/src/main.py"]
+        }
+    ]
+}
