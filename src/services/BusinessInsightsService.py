@@ -21,14 +21,25 @@ class BusinessInsightsService:
         av_api_key = os.environ.get('ALPHA_VANTAGE_API_KEY')
         av_api_url = f"{self.BASE_URL}/query?function=SYMBOL_SEARCH&keywords={keyword}&apikey={av_api_key}"
 
-        result = requests.get(av_api_url)
+        result = requests.get(av_api_url).json()
 
-        return result.json()
+        return result
 
     def get_ticker_info(self, ticker: str):
         av_api_key = os.environ.get('ALPHA_VANTAGE_API_KEY')
         av_api_url = f"{self.BASE_URL}/query?function=GLOBAL_QUOTE&symbol={ticker}&apikey={av_api_key}"
 
-        result = requests.get(av_api_url)
+        result = requests.get(av_api_url).json()
 
-        return result.json()
+        return result
+
+    def get_news_by_ticker(self, ticker: str):
+        av_api_key = os.environ.get('ALPHA_VANTAGE_API_KEY')
+        av_api_url = f"{self.BASE_URL}/query?function=NEWS_SENTIMENT&tickers={ticker}&apikey={av_api_key}"
+
+        result = requests.get(av_api_url).json()
+
+        if "Information" in result and "Invalid inputs" in result["Information"]:
+            return {}
+
+        return result
