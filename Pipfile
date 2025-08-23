@@ -5,8 +5,10 @@ name = "pypi"
 
 [packages]
 fastapi = {extras = ["standard"], version = "*"}
+langchain = {extras = ["openai"], version = "*"}
+pydantic = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.12"

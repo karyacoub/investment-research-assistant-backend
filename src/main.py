@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
+from src.controllers.LLMController import LLMController
+
 app = FastAPI()
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app.include_router(LLMController().router)
