@@ -8,6 +8,7 @@ fastapi = {extras = ["standard"], version = "*"}
 pydantic = "*"
 langchain-community = "*"
 langchain-ollama = "*"
+langgraph = "*"
 
 [dev-packages]
 
