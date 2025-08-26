@@ -1,7 +1,9 @@
+import time
 from langchain.chains import LLMChain
 from langchain_ollama import ChatOllama
 from langgraph.prebuilt import create_react_agent
 
+from src.mocks.LLMAgentMocks import MOCK_AGENT_RESPONSE
 from src.services.BusinessInsightsService import BusinessInsightsService
 from src.models.LLMModels import LLMPrompt
 
@@ -23,6 +25,11 @@ class LLMAgentService:
         self.graph = create_react_agent(model, tools)
 
     async def submit_prompt(self, prompt: LLMPrompt):
+        # Mock response to prevent hitting Alpha Vantage API limits
+        if prompt.mock:
+            time.sleep(5) # Simulate network delay in seconds
+            return MOCK_AGENT_RESPONSE
+
         messages = {
             "messages": [
                 {
