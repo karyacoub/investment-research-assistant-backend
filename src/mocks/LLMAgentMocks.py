@@ -14,16 +14,18 @@ MOCK_AGENT_RESPONSE = json.dumps({
     "sentiment_score": "0.062714",
     "top_articles": [
         {
-        "title": "Is Capital One About to Create the Biggest Payment Network In America? Here's What Investors Need to Know.",
-        "url": "https://www.fool.com/investing/2025/08/24/is-capital-one-about-to-create-the-biggest-payment/"
+            "title": "Is Capital One About to Create the Biggest Payment Network In America? Here's What Investors Need to Know.",
+            "url": "https://www.fool.com/investing/2025/08/24/is-capital-one-about-to-create-the-biggest-payment/",
+            "banner_image": "https://g.foolcdn.com/art/companylogos/square/cof.png"
         },
         {
-        "title": "Why Is Capital One  ( COF )  Down 2.2% Since Last Earnings Report?",
-        "url": "https://www.zacks.com/stock/news/2741010/why-is-capital-one-cof-down-22-since-last-earnings-report"
+            "title": "Why Is Capital One  ( COF )  Down 2.2% Since Last Earnings Report?",
+            "url": "https://www.zacks.com/stock/news/2741010/why-is-capital-one-cof-down-22-since-last-earnings-report",
+            "banner_image": "https://g.foolcdn.com/art/companylogos/square/cof.png"
         },
         {
-        "title": "Here's Why Capital One  ( COF )  is a Strong Value Stock",
-        "url": "https://www.zacks.com/stock/news/2740786/heres-why-capital-one-cof-is-a-strong-value-stock"
+            "title": "Here's Why Capital One  ( COF )  is a Strong Value Stock",
+            "url": "https://www.zacks.com/stock/news/2740786/heres-why-capital-one-cof-is-a-strong-value-stock",
         }
     ]
     },

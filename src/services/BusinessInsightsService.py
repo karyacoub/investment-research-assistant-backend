@@ -48,7 +48,8 @@ class BusinessInsightsService:
     def get_news_by_ticker(tickers: str):
         """
         Fetch recent news articles and sentiment analysis for given tickers.
-        Useful for you to provide more information on a certain set of tickers.
+        Useful for you to provide more information on a certain set of tickers, and to answer
+        quetions that are more nebulous and require more information than just market data.
 
         Input:
             tickers (str): Comma-separated tickers (e.g., 'NVDA,AAPL').

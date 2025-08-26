@@ -61,11 +61,12 @@ class LLMAgentService:
                             }
                             "news_highlights": {
                                 "overall_sentiment": 'A string representing the overall sentiment of the company.',
-                                "sentiment_score": 'A string representing the score of the sentiment on a scale from 0 - 1.',
+                                "sentiment_score": 'A string representing the score of the sentiment on a scale from -1 to 1.',
                                 "top_articles": [
                                     {
                                         "title": 'A string representing the article headline.'
                                         "url": 'A string representing the article URL.'
+                                        "banner_image": 'A string representing the article banner image URL, if available.'
                                     },
                                     ...
                                 ]
