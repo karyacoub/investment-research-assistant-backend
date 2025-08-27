@@ -3,12 +3,9 @@ import requests
 from langchain.tools import tool
 
 class BusinessInsightsService:
-    # TODO: remove this
-    # AlphaVantage API key: IWRV51J9K86IOJL2
-
     def __init__(self):
         if "ALPHA_VANTAGE_API_KEY" not in os.environ:
-            os.environ.setdefault("ALPHA_VANTAGE_API_KEY", "IWRV51J9K86IOJL2") # TODO: Store this in env var
+            raise Exception("ALPHA_VANTAGE_API_KEY not set in environment variables")
 
     @staticmethod
     @tool("market_data_tool")
@@ -31,9 +28,11 @@ class BusinessInsightsService:
 
         if "Time Series (Daily)" not in data:
             return f"No data available for {symbol}. Response: {data}"
+        
+        sortedData = dict(sorted(data["Time Series (Daily)"].items(), reverse=True)) # sort by date descending
 
-        latest_date = next(iter(data["Time Series (Daily)"])) # TODO: Should make sure this is sorted so it's guarenteed to get the latest date
-        latest_data = data["Time Series (Daily)"][latest_date]
+        latest_date = next(iter(sortedData["Time Series (Daily)"])) 
+        latest_data = sortedData["Time Series (Daily)"][latest_date]
 
         return {
             "symbol": symbol,

@@ -1,9 +1,9 @@
 import time
-from langchain.chains import LLMChain
+import random                                                           
 from langchain_ollama import ChatOllama
 from langgraph.prebuilt import create_react_agent
 
-from src.mocks.LLMAgentMocks import MOCK_AGENT_RESPONSE
+from src.mocks.LLMAgentMocks import mock_agent_responses
 from src.services.BusinessInsightsService import BusinessInsightsService
 from src.models.LLMModels import LLMPrompt
 
@@ -28,7 +28,7 @@ class LLMAgentService:
         # Mock response to prevent hitting Alpha Vantage API limits
         if prompt.mock:
             time.sleep(5) # Simulate network delay in seconds
-            return MOCK_AGENT_RESPONSE
+            return random.choice(mock_agent_responses) # pick a random mock response
 
         messages = {
             "messages": [
@@ -89,7 +89,6 @@ class LLMAgentService:
         }
 
         try:
-            # TODO: Any additional error handling here?
             agent_response = await self.graph.ainvoke(messages)
             return agent_response.get("messages")[-1].content
         except Exception as e:

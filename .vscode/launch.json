@@ -13,7 +13,10 @@
                 "dev",
                 "${workspaceFolder}/src/main.py",
             ],
-            "jinja": true
+            "jinja": true,
+            "env": {
+                "ALPHA_VANTAGE_API_KEY": "IWRV51J9K86IOJL2"
+            },
         }
     ]
 }
