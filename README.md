@@ -6,19 +6,19 @@ An LLM-driven asssitant that helps you invest smarter.
  * [Ollama](https://ollama.com/download) installed and running
 
 ## Local Setup
- * Download and install [Ollama](https://ollama.com/download) for your chosen platform.
- 1. Ensure that Ollama is running in the background.
- 2. Pull the correct LLM using the Ollama CLI tool in your terminal:
+ 1. Download and install [Ollama](https://ollama.com/download) for your chosen platform.
+ 2. Ensure that Ollama is running in the background.
+ 3. Pull the correct LLM using the Ollama CLI tool in your terminal:
     ```
     ollama pull gemma3:12b
     ```
- 3. Create an Alpha Vantage API key
+ 4. Create an Alpha Vantage API key
     * Sign up at [Alpha Vantage](https://www.alphavantage.co/?utm_source=chatgpt.com) for a free API key.
     * Set the API key as an environment variable:
     ```
     export ALPHA_VANTAGE_API_KEY="<YOUR_API_KEY>"
     ```
- 4. Install Python dependencies
+ 5. Install Python dependencies
     ```
     cd <project-directory>
     pipenv shell
